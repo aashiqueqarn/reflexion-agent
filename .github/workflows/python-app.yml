@@ -115,6 +115,12 @@ jobs:
         run: |
           poetry install --no-interaction --no-root
 
+      - name: Debug env
+        run: |
+          echo "OPENAI_API_KEY length: ${#OPENAI_API_KEY}"
+          echo "LANGSMITH_API_KEY length: ${#LANGSMITH_API_KEY}"
+          echo "TAVILY_API_KEY length: ${#TAVILY_API_KEY}"
+
       - name: Execute main.py
         run: |
           poetry run python main.py
